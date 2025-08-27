@@ -1,7 +1,16 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Rocket, UserCheck, Search } from 'lucide-react';
 
 export default function WhyCH() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   const reasons = [
     {
       icon: <Rocket className="w-8 h-8 sm:w-10 sm:h-10 text-white" />,
@@ -9,6 +18,7 @@ export default function WhyCH() {
       description:
         'Kickstart your career with our curated internships and job listings tailored to your skills.',
       bg: 'bg-blue-800',
+      aosDelay: '0',
     },
     {
       icon: <Search className="w-8 h-8 sm:w-10 sm:h-10 text-white" />,
@@ -16,6 +26,7 @@ export default function WhyCH() {
       description:
         'Use intelligent filters to find roles that match your ambitions and interests quickly.',
       bg: 'bg-emerald-800',
+      aosDelay: '200',
     },
     {
       icon: <UserCheck className="w-8 h-8 sm:w-10 sm:h-10 text-white" />,
@@ -23,27 +34,29 @@ export default function WhyCH() {
       description:
         'All listings are verified to ensure legitimate and trusted opportunities for your growth.',
       bg: 'bg-purple-800',
+      aosDelay: '400',
     },
   ];
 
   return (
-    <div className="py-16 sm:py-20 bg-white">
-      {/* Heading */}
+    <div className="py-16 sm:py-20 bg-white" ref={sectionRef}>
+      {/* Static Heading */}
       <div className="text-center mb-12 px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 mb-4 leading-snug">
           WHY CHOOSE <span className="text-blue-600">CareerHorizon</span>
         </h2>
-
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 font-medium max-w-3xl mx-auto">
           Elevate your career journey with a platform built for students and early professionals.
         </p>
       </div>
-
-      {/* Cards */}
+      {/* Cards with AOS animations */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {reasons.map((reason, index) => (
           <div
             key={index}
+            data-aos="fade-up"
+            data-aos-delay={reason.aosDelay}
+            data-aos-duration="800"
             className={`relative p-6 sm:p-8 min-h-[200px] rounded-3xl text-white overflow-hidden 
               ${reason.bg} 
               shadow-none transition-all ease-in-out duration-300 
@@ -56,15 +69,10 @@ export default function WhyCH() {
                 {reason.icon}
               </div>
             </div>
-
             {/* Title & Description */}
             <div className="relative z-10 text-center">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-sm sm:text-base font-medium">
-                {reason.description}
-              </p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{reason.title}</h3>
+              <p className="text-sm sm:text-base font-medium">{reason.description}</p>
             </div>
           </div>
         ))}

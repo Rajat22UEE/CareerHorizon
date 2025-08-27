@@ -1,4 +1,7 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Bolt, Globe, Users } from 'lucide-react';
 
 const headingText = 'HOW IT WORKS';
@@ -17,6 +20,7 @@ function Card({
 }) {
   return (
     <div
+      data-aos="fade-up" // AOS animation applied only here on cards
       className={`flex items-start gap-4 p-5 sm:p-6 min-h-[180px] rounded-2xl bg-white border ${borderColor} 
       shadow-md transition duration-300 hover:shadow-xl hover:${borderColor} hover:ring-2 ${ringColor}`}
       style={{ boxShadow: `0 0 10px ${shadowColor}` }}
@@ -35,11 +39,15 @@ function Card({
 }
 
 export default function WorkCompo() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   return (
     <div className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-10 md:gap-12">
-          {/* Left Side: Heading & Description */}
+          {/* Static Heading and Description */}
           <div className="md:sticky md:top-20 lg:sticky lg:top-20 self-start">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-5 leading-tight">
               {headingText}
@@ -49,7 +57,7 @@ export default function WorkCompo() {
             </p>
           </div>
 
-          {/* Right Side: Cards */}
+          {/* Cards with AOS animations */}
           <div className="space-y-6 sm:space-y-8">
             <Card
               icon={<Bolt className="w-6 h-6 sm:w-7 sm:h-7" />}
