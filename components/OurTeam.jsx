@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaUserCircle } from 'react-icons/fa';
 const teamMembers = [
   {
     name: 'Sudip Karmakar',
-    role: 'Backend Developer',
+    role: 'Full Stack Developer',
     linkedin: 'https://www.linkedin.com/in/sudip-karmakar-675629249/',
     github: 'https://github.com/Sudipkarmakar25',
   },
@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     name: 'Rajat Debnath',
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer',
     linkedin: 'https://www.linkedin.com/in/rajat-debnath/',
     github: 'https://github.com/Rajat22UEE',
   },
