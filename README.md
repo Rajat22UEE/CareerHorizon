@@ -1,36 +1,13 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✨ Career Horizon - Frontend
 
-## Getting Started
+## 📜 Explanation
 
-First, run the development server:
+This is the public-facing application for Career Horizon where users can explore and find career opportunities. Built with Next.js for optimal performance and SEO, it provides a fast, responsive, and user-friendly experience for browsing jobs, internships, and HR contacts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Server-Side Rendering (SSR):** Leverages Next.js to deliver fast page loads and improve search engine visibility.
+* **Job & Internship Listings:** Displays all available opportunities in a clean, card-based UI with easy-to-read details.
+* **HR Contacts Directory:** A dedicated page where users can view a list of professional HR contacts.
+* **Responsive Design:** Ensures a seamless experience across all devices, including desktops, tablets, and smartphones.
+* **Engaging UI:** Features a modern design with intuitive navigation to help users find information quickly.
